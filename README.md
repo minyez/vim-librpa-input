@@ -84,7 +84,7 @@ For example, with LazyVim's default `blink.cmp` setup:
   opts = {
     sources = {
       per_filetype = {
-        librpa = { inherit_defaults = true, "omni" },
+        librpain = { inherit_defaults = true, "omni" },
       },
     },
   },
