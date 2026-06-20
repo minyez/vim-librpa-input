@@ -73,7 +73,7 @@ python3 generate.py -c custom.yml
 
 The generated ftplugin sets Vim's `omnifunc`, so completion is available with `CTRL-X CTRL-O`
 in insert mode. Completion is context-aware for prefixed groups: after `output `, only `output`
-keywords are suggested; after `periodic_hf `, only `periodic_hf` subkeywords are suggested.
+keywords are suggested.
 
 Neovim completion plugins can use the same interface if they enable their omni/omnifunc source.
 For example, with LazyVim's default `blink.cmp` setup:
@@ -101,9 +101,8 @@ Tag entries can be plain strings, as above, or mappings with completion metadata
 General:
   group: Identifier
   tags:
-  - name: k_grid
-    args: "<n1> <n2> <n3>"
-    info: "K-point grid dimensions."
+  - name: nfreq
+    info: "Number of frequency points."
 ```
 
 The supported tag metadata fields are:
@@ -120,7 +119,7 @@ For prefixed groups, completion context is inferred from simple prefixes like
 
 ```yaml
 MyOutputGroup:
-  group: Special
+  group: Identifier
   prefix: "my_output\\s\\+"
   complete_after: my_output
   tags:
@@ -128,10 +127,3 @@ MyOutputGroup:
 ```
 
 Please note that if multiple `SyntaxName` of syntax groups are found, only the last one parsed will be used.
-The following group names are reserved in the main config file `syntax.yml`:
-
-- `General`
-- `Output`
-- `Species`
-
-If you want to add keywords to these groups, please modify `syntax.yml`.
