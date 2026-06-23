@@ -5,7 +5,6 @@ API:
     - nfreq
     - parallel_routing
     - vq_threshold
-    - use_kpara_scf_eigvec
     - tfgrids_type
     - tfgrids_freq_min
     - tfgrids_freq_interval
@@ -15,6 +14,40 @@ API:
     - minimax_emin
     - minimax_emax
     - minimax_regulation
+    - n_bands_chi0
+    - n_bands_sigc
+    - option_bvk_remap
+    - gf_threshold
+    - libri_chi0_collect_s0_chunk
+    - libri_chi0_collect_max_bytes
+    - libri_chi0_threshold_C
+    - libri_chi0_threshold_G
+    - libri_exx_threshold_C
+    - libri_exx_threshold_D
+    - libri_exx_threshold_V
+    - n_params_anacon
+    - sqrt_coulomb_threshold
+    - libri_g0w0_threshold_C
+    - libri_g0w0_threshold_G
+    - libri_g0w0_threshold_Wc
+    - option_dielect_func
+    - rpa_headwing_body_start
+    - ifreq_output_wc_start
+    - ifreq_output_wc_end
+    - option_qpe_solver
+    - qpe_solver_n_iter_max
+    - qpe_solver_thres
+    - qpe_solver_damp_factor
+    - sf_gf_omega_shift
+    - sf_sigc_omega_shift
+
+APISW:
+  group: Identifier
+  tags:
+    - use_kpara_scf_eigvec
+    - override_qpe_solver_nan
+    - use_qpe_adaptive_damp
+    - use_qpe_legacy_update
     - use_fullcoul_eps
     - use_fullcoul_exx
     - use_fullcoul_wc
@@ -22,65 +55,33 @@ API:
     - use_symmetry_rpa
     - use_symmetry_gw
     - output_abacus_gw_gf
-    - n_bands_chi0
-    - n_bands_sigc
-    - option_bvk_remap
-    - use_shrink_abfs
-    - use_shrink_chi
-    - gf_threshold
-    - libri_chi0_collect_s0_chunk
-    - libri_chi0_collect_max_bytes
-    - libri_chi0_threshold_C
-    - libri_chi0_threshold_G
-    - use_scalapack_ecrpa
-    - libri_exx_threshold_C
-    - libri_exx_threshold_D
-    - libri_exx_threshold_V
-    - n_params_anacon
-    - sqrt_coulomb_threshold
-    - use_scalapack_gw_wc
-    - load_sigc_from_file
-    - use_cholesky_gw_wc
-    - use_gpu_replace_scalapack
-    - use_elpa_sqrt_coulomb
-    - libri_g0w0_threshold_C
-    - libri_g0w0_threshold_G
-    - libri_g0w0_threshold_Wc
-    - replace_w_head
-    - option_dielect_func
-    - use_2d_dielectric
     - output_gw_sigc_ks_kf
-    - rpa_headwing_body_start
     - output_gw_sigc_ks_mat_kf
     - output_gw_sigc_mat_rt
     - output_gw_sigc_mat_rf
     - output_wc_rf
-    - ifreq_output_wc_start
-    - ifreq_output_wc_end
-    - option_qpe_solver
-    - qpe_solver_n_iter_max
-    - qpe_solver_thres
-    - qpe_solver_damp_factor
-    - use_qpe_adaptive_damp
-    - use_qpe_legacy_update
-    - override_qpe_solver_nan
-    - sf_gf_omega_shift
-    - sf_sigc_omega_shift
+    - replace_w_head
+    - load_sigc_from_file
+    - use_shrink_abfs
+    - use_shrink_chi
+    - use_scalapack_ecrpa
+    - use_2d_dielectric
+    - use_scalapack_gw_wc
+    - use_cholesky_gw_wc
+    - use_gpu_replace_scalapack
+    - use_elpa_sqrt_coulomb
 
 DRIVER:
-  group: String
+  group: Special
   tags:
     - output_level
     - task
     - constants_choice
     - input_dir
     - cs_threshold
-    - output_energy_qp
     - i_state_low
     - i_state_high
-    - output_hamgnn
     - use_pyatb
-    - output_gw_spec_func
     - use_spinor_wfc
     - prefix_lri_coeff
     - prefix_lri_coeff_shrink
@@ -106,8 +107,17 @@ DRIVER:
     - sf_state_start
     - sf_state_end
 
-DEPRECATED:
+DRIVERSW:
   group: Special
+  tags:
+    - output_energy_qp
+    - output_hamgnn
+    - output_gw_spec_func
+
+# Only highlight, do not complete
+DEPRECATED:
+  group: ErrorMsg
+  complete: false
   tags:
     - debug
     - tfgrid_type
