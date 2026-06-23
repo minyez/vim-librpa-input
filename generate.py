@@ -274,9 +274,16 @@ function! {completion_module}#Complete(findstart, base) abort
   endif
 
   let l:before_base = strpart(l:prefix, 0, strlen(l:prefix) - strlen(a:base))
+  if l:before_base !~# '^\\s*\\%(\\k\\+\\s\\+\\)\\?$'
+    return []
+  endif
+
   let l:context_words = split(l:before_base)
   let l:items = s:top_level_items
-  if len(l:context_words) > 0 && has_key(s:context_items, l:context_words[0])
+  if len(l:context_words) > 0
+    if !has_key(s:context_items, l:context_words[0])
+      return []
+    endif
     let l:items = s:context_items[l:context_words[0]]
   endif
 
