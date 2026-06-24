@@ -115,6 +115,11 @@ DRIVERSW:
     - output_hamgnn
     - output_gw_spec_func
 
+DEVOPTS:
+  group: MoreMsg
+  tags:
+    - use_chi0_q_uhap_split
+
 # Only highlight, do not complete
 DEPRECATED:
   group: ErrorMsg
