@@ -2,6 +2,7 @@ API:
   group: Identifier
   tags:
     - output_dir
+    - restart_from_dir
     - nfreq
     - parallel_routing
     - vq_threshold
@@ -61,7 +62,7 @@ APISW:
     - output_gw_sigc_mat_rf
     - output_wc_rf
     - replace_w_head
-    - load_sigc_from_file
+    - read_sigc_mat_rf
     - use_shrink_abfs
     - use_shrink_chi
     - use_scalapack_ecrpa
