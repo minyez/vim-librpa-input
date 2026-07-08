@@ -27,6 +27,9 @@ API:
     - libri_exx_threshold_D
     - libri_exx_threshold_V
     - n_params_anacon
+    - n_params_anacon_resample
+    - anacon_tfgrids_type
+    - anacon_nfreq
     - sqrt_coulomb_threshold
     - libri_g0w0_threshold_C
     - libri_g0w0_threshold_G
@@ -39,8 +42,12 @@ API:
     - qpe_solver_n_iter_max
     - qpe_solver_thres
     - qpe_solver_damp_factor
+    - istate_ref_hedin_shift
     - sf_gf_omega_shift
     - sf_sigc_omega_shift
+    - rpa_headwing_mode
+    - istate_output_mat_start
+    - istate_output_mat_end
 
 APISW:
   group: Identifier
@@ -49,6 +56,7 @@ APISW:
     - override_qpe_solver_nan
     - use_qpe_adaptive_damp
     - use_qpe_legacy_update
+    - use_hedin_shift
     - use_fullcoul_eps
     - use_fullcoul_exx
     - use_fullcoul_wc
@@ -58,9 +66,12 @@ APISW:
     - output_abacus_gw_gf
     - output_gw_sigc_ks_kf
     - output_gw_sigc_ks_mat_kf
+    - output_exx_ks_mat_k
+    - output_gw_sigc_mat_kf
     - output_gw_sigc_mat_rt
     - output_gw_sigc_mat_rf
     - output_wc_rf
+    - output_wc_rf_atom_pair
     - replace_w_head
     - read_sigc_mat_rf
     - use_shrink_abfs
